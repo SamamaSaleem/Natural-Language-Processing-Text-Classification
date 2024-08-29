@@ -129,6 +129,21 @@ pip install numpy pandas matplotlib scikit-learn nltk
    Aggregate predictions from all classifiers:
 
    ```python
+   # Combine predictions from all classifiers using weighted voting
+   weightAll = weightKNN + weightLR + weightNB + weightRF + weightSVM  # Sum of weights of all classifiers
+   threshold = 0.4  # Threshold for deciding the final prediction
+   y_pred = 1 * (weightNB * classifierNB.predict(X_test) +  # Aggregate predictions with weights
+              weightRF * classifierRF.predict(X_test) +
+              weightLR * classifierLR.predict(X_test) +
+              weightKNN * classifierKNN.predict(X_test) +
+              weightSVM * classifierSVM.predict(X_test)) > threshold * weightAll  # Apply threshold
+
+# Evaluate the combined model
+cm = confusion_matrix(y_test, y_pred)  # Compute confusion matrix
+print(cm)  # Print confusion matrix
+accuracy_score(y_test, y_pred)  # Print accuracy score
+
+   ```python
    weightAll = weightKNN + weightLR + weightNB + weightRF + weightSVM
    threshold = 0.4
    y_pred = 1 * (weightNB * classifierNB.predict(X_test) +
