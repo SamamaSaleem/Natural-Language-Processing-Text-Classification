@@ -137,6 +137,7 @@ pip install numpy pandas matplotlib scikit-learn nltk
               weightLR * classifierLR.predict(X_test) +
               weightKNN * classifierKNN.predict(X_test) +
               weightSVM * classifierSVM.predict(X_test)) > threshold * weightAll  # Apply threshold
+   ```
 
 # Evaluate the combined model
 cm = confusion_matrix(y_test, y_pred)  # Compute confusion matrix
