@@ -171,4 +171,4 @@ ax.view_init(elev=20, azim=130)
 plt.show()
 ```
 Below is the graphical representation of the confusion matrix.
-![A 3D visualization of the confusion matrix is provided to illustrate the model's performance](NLP_Classification_Visualization.png)
+![A 3D visualization of the confusion matrix is provided to illustrate the model's performance](NLP_Classification_Visualization.PNG)
