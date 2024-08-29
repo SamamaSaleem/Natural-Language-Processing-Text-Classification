@@ -91,22 +91,34 @@ pip install numpy pandas matplotlib scikit-learn nltk
    Train and evaluate various classifiers:
 
    ```python
+   from sklearn.metrics import confusion_matrix, accuracy_score
+   
+   # Import Naive Bayes classifier.
+   from sklearn.naive_bayes import GaussianNB
    classifierNB = GaussianNB()
    classifierNB.fit(X_train, y_train)
    weightNB = accuracy_score(y_test, classifierNB.predict(X_test))
-
-   classifierSVM = SVC(kernel='linear', random_state=0)
+   
+   # Import Support Vector Classifier.
+   from sklearn.svm import SVC
+   classifierSVM = SVC(kernel='linear', random_state=0)  # Initialize and train SVC with a linear kernel.
    classifierSVM.fit(X_train, y_train)
    weightSVM = accuracy_score(y_test, classifierSVM.predict(X_test))
-
+   
+   # Import Random Forest classifier.
+   from sklearn.ensemble import RandomForestClassifier
    classifierRF = RandomForestClassifier(n_estimators=1000, criterion='entropy', random_state=42)
    classifierRF.fit(X_train, y_train)
    weightRF = accuracy_score(y_test, classifierRF.predict(X_test))
-
+   
+   # Import Logistic Regression classifier.
+   from sklearn.linear_model import LogisticRegression
    classifierLR = LogisticRegression(random_state=0)
    classifierLR.fit(X_train, y_train)
    weightLR = accuracy_score(y_test, classifierLR.predict(X_test))
-
+   
+   # Import K-Nearest Neighbors classifier.
+   from sklearn.neighbors import KNeighborsClassifier
    classifierKNN = KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2)
    classifierKNN.fit(X_train, y_train)
    weightKNN = accuracy_score(y_test, classifierKNN.predict(X_test))
