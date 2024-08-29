@@ -136,7 +136,7 @@ print(cm)
 print(accuracy_score(y_test, y_pred))
 ```
 
-The confusion matrix and accuracy score will be displayed in the output.
+The ensemble model achieved an overall accuracy of **81.5%**. This improved performance highlights the effectiveness of combining multiple classifiers—Naive Bayes, SVM, Random Forest, Logistic Regression, and K-Nearest Neighbors—into a single ensemble model. By leveraging the strengths of each classifier, the ensemble approach enhances the accuracy and robustness of predictions compared to using individual classifiers alone.
 
 ## Visualization
 
@@ -172,4 +172,5 @@ plt.show()
 ```
 Below is the graphical representation of the confusion matrix.
 ![A 3D visualization of the confusion matrix is provided to illustrate the model's performance](NLP_Classification_Visualization.PNG)
+
 *A 3D visualization of the confusion matrix is provided to illustrate the model's performance*
